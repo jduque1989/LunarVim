@@ -25,7 +25,13 @@ lvim.plugins = {
   { "folke/tokyonight.nvim" },
   { "arcticicestudio/nord-vim" },
   { "mfussenegger/nvim-jdtls" },
-
+  {"NTBBloodbath/rest.nvim", 
+        dependencies = {"nvim-lua/plenary.nvim"},
+        config = function()
+            require("rest-nvim").setup({
+            })
+        end
+    },
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
