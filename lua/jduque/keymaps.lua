@@ -26,28 +26,26 @@ end
 
 vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
 
--- Tabs --
--- keymap("n", "\\", ":tabnew %<cr>", opts)
--- keymap("n", "\\", ":tabnew %<cr>", opts)
--- keymap("n", "<s-\\>", ":tabclose<cr>", opts)
--- keymap("n", "<s-\\>", ":tabonly<cr>", opts)
+
+-- keymap("n", "<C-Up>", ":tabnext<cr>", opts)
+
+-- -- Move to the previous tab
+-- keymap("n", "<C-Down>", ":tabprev<cr>", opts)
+
+
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-S-Up>", ":resize +2<CR>", opts)
+keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts)
 
-keymap("n", "<c-j>", "<c-d>", opts)
-keymap("n", "<c-k>", "<c-u>", opts)
-keymap("n", "<c-m>", "<s-m>", opts)
 
-keymap("n", "n", "nzz", opts)
-keymap("n", "N", "Nzz", opts)
-keymap("n", "*", "*zz", opts)
-keymap("n", "#", "#zz", opts)
-keymap("n", "g*", "g*zz", opts)
-keymap("n", "g#", "g#zz", opts)
+-- Horizontal split
+keymap("n", "<C-b>", ":split<CR>", opts)
+
+-- Vertical split
+keymap("n", "<C-v>", ":vsplit<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -115,5 +113,7 @@ M.show_documentation = function()
   end
 end
 vim.api.nvim_set_keymap("n", "K", ":lua require('user.keymaps').show_documentation()<CR>", opts)
+
+
 
 return M
