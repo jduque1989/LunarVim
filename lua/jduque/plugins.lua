@@ -33,5 +33,12 @@ lvim.plugins = {
         require('trevj').format_at_cursor()
       end)
     end,
-  }
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && npm install",
+    init = function() vim.cmd("do User LspAttachBuffers") end,
+    ft = { "markdown" },
+  },
 }

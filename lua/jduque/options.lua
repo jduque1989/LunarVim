@@ -45,7 +45,7 @@ lvim.builtin.dap.active = true
 lvim.keys.term_mode = { ["<C-l>"] = false }
 lvim.transparent_window = true
 lvim.builtin.bufferline.active = true
-
+require("lvim.lsp.manager").setup("marksman")
 -- lvim.builtin.cmp.formatting = {
 --     format = require("tailwindcss-colorizer-cmp").formatter
 -- }
@@ -97,18 +97,7 @@ local options = {
   -- colorcolumn = "80",
   -- colorcolumn = "120",
 }
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
--- vim.opt.fillchars.eob = " "
--- vim.opt.fillchars = vim.opt.fillchars + "vertleft: "
--- vim.opt.fillchars = vim.opt.fillchars + "vertright: "
 vim.opt.fillchars = vim.opt.fillchars + "eob: "
--- vim.opt.fillchars:append {
---   stl = " ",
--- }
-
--- vim.opt.shortmess:append "c"
--- use treesitter folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldnestmax = 10 -- Maximum fold depth
