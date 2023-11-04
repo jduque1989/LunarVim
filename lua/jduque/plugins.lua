@@ -4,8 +4,15 @@ lvim.plugins = {
   { "folke/tokyonight.nvim" },
   { "arcticicestudio/nord-vim" },
   { "mfussenegger/nvim-jdtls" },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("lvim.core.indentlines").setup()
+    end,
+    event = "User FileOpened",
+    enabled = lvim.builtin.indentlines.active,
+  },
   { "Exafunction/codeium.vim" },
-  -- { "iamcco/markdown-preview.nvim" },
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
@@ -13,28 +20,11 @@ lvim.plugins = {
       require("todo-comments").setup {}
     end
   },
-  --
-
-  -- {"NTBBloodbath/rest.nvim",
-  --       dependencies = {"nvim-lua/plenary.nvim"},
-  --       config = function()
-  --           require("rest-nvim").setup({
-  --           })
-  --       end
-  --   },
-  -- {
-  --   "iamcco/markdown-preview.nvim",
-  --   build = "cd app && npm install",
-  --   ft = "markdown",
-  --   config = function()
-  --     vim.g.mkdp_auto_start = 1
-  --   end,
-  -- },
   { "ChristianChiarulli/swenv.nvim" },
+  { "AckslD/swenv.nvim" },
   { "stevearc/dressing.nvim" },
   { "mfussenegger/nvim-dap-python" },
   { "kylechui/nvim-surround" },
-  -- { "mg979/vim-visual-multi" },
   {
     "AckslD/nvim-trevJ.lua",
     config = 'require("trevj").setup()', -- optional call for configurating non-default filetypes etc

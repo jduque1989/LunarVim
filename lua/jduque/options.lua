@@ -108,7 +108,11 @@ vim.opt.fillchars = vim.opt.fillchars + "eob: "
 -- }
 
 -- vim.opt.shortmess:append "c"
-
+-- use treesitter folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldnestmax = 10 -- Maximum fold depth
+vim.opt.foldminlines = 1 -- Minimum number of lines to create a fold
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

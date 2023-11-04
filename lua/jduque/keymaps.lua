@@ -42,10 +42,10 @@ keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts)
 
 
 -- Horizontal split
-keymap("n", "<C-b>", ":split<CR>", opts)
+keymap("n", "<C-c>", ":split<CR>", opts)
 
 -- Vertical split
-keymap("n", "<C-v>", ":vsplit<CR>", opts)
+keymap("n", "<C-x>", ":vsplit<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
